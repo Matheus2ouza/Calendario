@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.title{
+    display: flex;
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    background: rgb(93,76,84);
+    background: linear-gradient(90deg, rgba(130,62,94,0.5) 0% 
+    18%, rgba(138,121,166,0.5) 73%, rgba(255,191,192,0.5) 100%);
+}
+.title h1{
+    font-size: 2.4rem;
+    margin-top: 10px;
+}
+.title p{
+    position: absolute;
+    top: 15px;
+    left: 230px;
+}
+body{
+    background-image: url(../img/backgroundImg.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    
+}
+.StyledClock{
+    display: flex;
+    position: relative;
+    font-size: 4.5rem;
+    color:#fff;
+    font-weight: 300;
+    font-style: normal;
+    width: 210px;
+    height: 100px;
+    top: 80px;
+    left: 85%;
+}
+.calendar{
+    display: flex;
+    position: absolute;
+    top: 180px;
+    left: 100px;
+    width: 420px;
+    height: 470px;
+}
+.wrapper{
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 60px 5px rgb(127, 127, 127);
+}
+.wrapper header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px 10px;
+}
+header .current-date{
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 3px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+}
+header .icons span:hover{
+    background: #f2f2f2;
+}
+header .icons span:last-child{
+    margin-right: -10px;
+}
+.calendar_body{
+    padding: 20px;
+}
+.calendar_body ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.calendar_body .days{
+    margin-bottom: 20px;
+}
+.calendar_body .weeks li{
+    font-weight: 500;
+}
+.calendar_body .days li{
+    margin-top: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+.days li.inactive{
+    color: #aaa;
+}
+.days li.active{
+    color: #fff;
+}
+.calendar_body ul li{
+    position: relative;
+    width: calc(100% / 7);
+}
+.calendar_body .days li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.days li:hover:before{
+    background: #f2f2f2;
+}
+.days li.active::before{
+    background: #9b59b6;
+}
