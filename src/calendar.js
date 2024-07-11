@@ -17,7 +17,7 @@ const renderClock = () => {
     let date = new Date(),
     currentHour = String(date.getHours()).padStart(2, '0'),
     currentMinute = String(date.getMinutes()).padStart(2, '0');
-    timeClock.innerText = `${currentHour} : ${currentMinute}`
+    timeClock.innerText = `${currentHour}:${currentMinute}`
 }
 const renderCalendar = () => {
     let firstDateofMonth = new Date(currentYear, currentMonth, 1).getDay(), //Obtém o dia da semana (0 a 6) do primeiro dia do mês atual

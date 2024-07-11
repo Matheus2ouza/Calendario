@@ -8,53 +8,101 @@
 }
 .title{
     display: flex;
-    position: absolute;
+    position: relative;
     height: 80px;
-    width: 100%;
+    width: 900px;
     background: rgb(93,76,84);
-    background: linear-gradient(90deg, rgba(130,62,94,0.5) 0% 
-    18%, rgba(138,121,166,0.5) 73%, rgba(255,191,192,0.5) 100%);
+    background: linear-gradient(90deg, rgba(130,62,94,0.2) 0% 
+    10%, rgba(138,121,166,0.2) 73%, rgba(255,191,192,0.1) 100%);
 }
 .title h1{
-    font-size: 2.4rem;
-    margin-top: 10px;
-}
-.title p{
+    display: flex;
     position: absolute;
-    top: 15px;
-    left: 230px;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    left: 5px;
 }
+.description{
+    display: flex;
+    position: relative;
+    font-size: 0.9rem;
+    position: absolute;
+    width: 800px;
+    top: 85px;
+    left: 13px;
+}
+
 body{
     background-image: url(../img/backgroundImg.jpg);
     background-repeat: no-repeat;
     display: flex;
-    
 }
 .StyledClock{
     display: flex;
-    position: relative;
-    font-size: 4.5rem;
+    position: absolute;
+    font-size: 4.8rem;
+    text-shadow: 0px 0px 20px rgb(0,0,0,0.4);
     color:#fff;
     font-weight: 300;
     font-style: normal;
-    width: 210px;
+    width: 200px;
     height: 100px;
-    top: 80px;
+    top: 20px;
     left: 85%;
+}
+.container_main {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.5s ease;
+    transform: translateX(0); /* Inicialmente visível */
+}
+.container_secondary {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0); /* Inicialmente escondido atrás do container_main */
+    opacity: 0; /* Começa transparente */
+    pointer-events: none; /* Não captura eventos */
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+.container_main.container_active {
+    transform: translateX(-100%); /* Move container_main para a esquerda */
+  }
+  
+  .container_main.container_active + .container_secondary {
+    opacity: 1; /* Torna container_secondary visível */
+    pointer-events: auto; /* Habilita captura de eventos */
 }
 .calendar{
     display: flex;
     position: absolute;
-    top: 180px;
-    left: 100px;
-    width: 420px;
-    height: 470px;
+    top: 220px;
+    left: 120px;
+    width: 700px;
+    height: 500px;
 }
 .wrapper{
-    width: 450px;
+    width: 700px;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     box-shadow: 0 0 60px 5px rgb(127, 127, 127);
+}
+.icons_more{
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.icons_more span{
+    font-size: 25px;
+    color: black;
 }
 .wrapper header{
     display: flex;
@@ -63,7 +111,7 @@ body{
     padding: 25px 30px 10px;
 }
 header .current-date{
-    font-size: 1.45rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 header .icons span{
@@ -82,6 +130,7 @@ header .icons span:last-child{
     margin-right: -10px;
 }
 .calendar_body{
+    top: 40px;
     padding: 20px;
 }
 .calendar_body ul{
@@ -95,6 +144,7 @@ header .icons span:last-child{
 }
 .calendar_body .weeks li{
     font-weight: 500;
+    font-size: 1.1rem;
 }
 .calendar_body .days li{
     margin-top: 30px;
@@ -126,5 +176,202 @@ header .icons span:last-child{
     background: #f2f2f2;
 }
 .days li.active::before{
-    background: #9b59b6;
+    background: #715bb9;
+}
+.events{
+    display: flex;
+    position: absolute;
+    top: 220px;
+    left: 820px;
+    width: 300px;
+    height: 500px;
+    border-radius: 0 10px 10px 0;
+    background: #715bb9;
+    flex-direction: column;
+}
+.events h1{
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+.weeks .events_add{
+    display: flex;
+    margin-left: auto; 
+    margin-right: auto;
+}
+.events_add li{
+    margin-left: 10px;
+    line-height: 30px;
+    list-style: none;
+    color: #000;
+}
+
+.events2{
+    display: flex;
+    position: absolute;
+    top: 220px;
+    left: 120px;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px 0 0 10px;
+    background: #715bb9;
+    flex-direction: column;
+}
+.events2 h1{
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+.events2 .events_add {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.events2 .events_add li {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.return_event {
+    position: absolute;
+    bottom: 10px; /* Distância do botão ao final da div pai */
+    right: 10px; /* Distância do botão à direita da div */
+    padding: 10px 20px;
+    background-color: #5c4993;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.8s ease;
+}
+
+.events2 .return_event:hover {
+    background-color: #463b7a;
+}
+.add_event_button {
+    position: absolute;
+    bottom: 10px; /* Distância do botão ao final da div pai */
+    right: 10px; /* Distância do botão à direita da div */
+    padding: 10px 20px;
+    background-color: #5c4993;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.8s ease;
+}
+
+.events2 .add_event_button:hover {
+    background-color: #463b7a;
+}
+.creat_events{ 
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 220px;
+    left: 420px;
+    width: 700px;
+    height: 500px;
+    background: #fff;
+    border-radius: 0 10px 10px 0;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+.title_event {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.creat_events h1{
+    margin: 10px 20px;
+    font-size: 2.5em;
+}
+.creat_events h1::after{
+    content: '';
+    display: block;
+    width: 110px;
+    height: 5px;
+    background-color: #715bb9;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+.input_group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title_group,
+.input_date,
+.area_description {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.title_group label,
+.input_date label{
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.title_group input[type="text"],
+.input_date input[type="date"],
+.area_description textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.area_description label{
+    margin-top: -70px;
+    margin-right: 10px;
+}
+.input_repetition {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.input_repetition label {
+    margin-right: 10px;
+}
+
+.input_repetition input[type="radio"] {
+    margin-right: -5px;
+}
+
+.area_description textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+.creat_events .add_event {
+    margin-top: 18px;
+    padding: 10px 20px;
+    background-color: #715bb9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.8s ease
+}
+.creat_events .add_event:hover{
+    background-color: #463b7a;
 }
