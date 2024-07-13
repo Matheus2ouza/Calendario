@@ -58,7 +58,7 @@ body{
     width: 100%;
     height: 100%;
     transition: transform 1.5s ease;
-    transform: translateX(0); /* Inicialmente visível */
+    transform: translateX(0); 
 }
 .container_secondary {
     display: flex;
@@ -258,8 +258,8 @@ header .icons span:last-child{
 }
 .add_event_button {
     position: absolute;
-    bottom: 10px; /* Distância do botão ao final da div pai */
-    right: 10px; /* Distância do botão à direita da div */
+    bottom: 10px;
+    right: 10px; 
     padding: 10px 20px;
     background-color: #5c4993;
     color: white;
