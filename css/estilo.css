@@ -241,8 +241,8 @@ header .icons span:last-child{
 
 .return_event {
     position: absolute;
-    bottom: 10px; /* Distância do botão ao final da div pai */
-    right: 10px; /* Distância do botão à direita da div */
+    bottom: 10px;
+    right: 10px;
     padding: 10px 20px;
     background-color: #5c4993;
     color: white;
@@ -276,8 +276,8 @@ header .icons span:last-child{
 .creat_events{ 
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
     top: 220px;
     left: 420px;
@@ -285,16 +285,16 @@ header .icons span:last-child{
     height: 500px;
     background: #fff;
     border-radius: 0 10px 10px 0;
-    padding: 3rem;
+    padding: 10px;
     box-sizing: border-box;
 }
 .title_event {
     margin-bottom: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .creat_events h1{
-    margin: 10px 20px;
+    margin: 0px 0px;
     font-size: 2.5em;
 }
 .creat_events h1::after{
@@ -310,7 +310,8 @@ header .icons span:last-child{
 .input_group {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    width: 80%;
 }
 
 .title_group,
@@ -323,13 +324,11 @@ header .icons span:last-child{
 
 .title_group label,
 .input_date label{
-    width: 80px;
     text-align: right;
     margin-right: 10px;
 }
 
 .title_group input[type="text"],
-.input_date input[type="date"],
 .area_description textarea {
     flex: 1;
     padding: 8px;
@@ -337,15 +336,29 @@ header .icons span:last-child{
     border-radius: 5px;
     font-size: 14px;
 }
+.input_date .date_event_start{
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input_date .date_event_end{
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 .area_description label{
     margin-top: -70px;
-    margin-right: 10px;
 }
 .input_repetition {
     display: flex;
     gap: 10px;
-    align-items: center;
-    margin-left: 25px;
+    align-items: flex-start;
 }
 
 .input_repetition label {
@@ -353,7 +366,7 @@ header .icons span:last-child{
 }
 
 .input_repetition input[type="radio"] {
-    margin-right: -5px;
+    margin-top: 5px;
 }
 
 .area_description textarea {
@@ -362,6 +375,7 @@ header .icons span:last-child{
 }
 
 .creat_events .add_event {
+    margin: auto;
     margin-top: 18px;
     padding: 10px 20px;
     background-color: #715bb9;
@@ -374,4 +388,7 @@ header .icons span:last-child{
 }
 .creat_events .add_event:hover{
     background-color: #463b7a;
+}
+.hidden{
+    display: none;
 }
