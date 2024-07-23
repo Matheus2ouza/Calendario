@@ -72,7 +72,7 @@ body{
     transition: transform 0.8s ease, opacity 0.8s ease;
 }
 .container_main.container_active {
-    transform: translateX(-100%); /* Move container_main para a esquerda */
+    transform: translateX(-150%); /* Move container_main para a esquerda */
   }
   
   .container_main.container_active + .container_secondary {
@@ -342,6 +342,29 @@ header .icons span:last-child{
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+}
+.input_color{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.input_color label{
+    margin-top: 3px;
+}
+.inp_color{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+.inp_color::-webkit-color-swatch{
+    border-radius: 50%;
+    border: 2px solid black;
 }
 
 .input_date .date_event_end{

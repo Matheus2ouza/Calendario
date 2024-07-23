@@ -58,7 +58,9 @@
         <div class="events2">
             <h1>Eventos</h1>
             <div>
-                <ul class="events_add"></ul>
+                <ul class="events_add">
+                    
+                </ul>
             </div>
             <button class="return_event">Voltar</button>
         </div>
@@ -79,28 +81,22 @@
                     <label for="no">+1 dia</label>
                 </div>
                 <div class="input_date">
-                    <label for="start">Começo</label>
-                    <div class="div_date_start"></div>
-                    <label for="end" class="lbl_end">Termina</label>
+                    <div class="div_date_start">
+                        <label for="start">Começo</label>
+                    </div>
                     <div class="div_date_end">
-                        <input type="date" class="date_event_end" name="date_event">
                     </div>
                 </div>
-                <div class="input_repetition">
-                    <div> 
-                        <label for="repetition">Repetir</label>
-                        <input type="radio" name="repetition_event">
-                        <label for="yes">Sim</label>
-                        <input type="radio" name="repetition_event" checked>
-                        <label for="no">Não</label>
-                    </div>
+                <div class="input_color">
+                    <label for="color">Cor do evento</label>
+                    <input class="inp_color" type="color" value="#DAA2DA">
                 </div>
                 <div class="area_description">
                     <label for="description">Descrição</label>
                     <textarea name="text" placeholder="adicione uma descrição"></textarea>
                 </div>
             </div>
-            <input class="add_event" type="submit" name="submit" click>
+            <button type="button" class="add_event" name="add_event">Enviar</button>
         </form>
     </div>
     <script src="../src/calendar.js" defer></script>
